@@ -2,7 +2,36 @@
 Spring Boot (v2+) starter for autoconfiguring Pebble as an MVC ViewResolver.
 
 ## Basic Usage
-TODO Dependency
+
+maven:
+
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+    
+    ...in dependencies...
+    
+    <dependency>
+        <groupId>com.github.n-at</groupId>
+        <artifactId>pebble-spring-boot-2-starter</artifactId>
+        <version>2.4.0</version>
+    </dependency>
+    
+gradle:
+
+    allprojects {
+        repositories {
+            ...
+            maven { url 'https://jitpack.io' }
+        }
+    }
+    
+    ...in dependencies...
+    
+    compile 'com.github.n-at:pebble-spring-boot-2-starter:2.4.0'
 
 This is enough for autoconfiguration to kick in. This includes:
 
