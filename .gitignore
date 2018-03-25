@@ -12,3 +12,7 @@
 
 target/*
 /target
+
+# Idea #
+/.idea/
+/*.iml

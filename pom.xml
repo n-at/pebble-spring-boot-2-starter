@@ -1,10 +1,11 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.mitchellbosecke</groupId>
+	<groupId>com.github.n-at</groupId>
 	<artifactId>pebble-spring-boot-2-starter</artifactId>
-	<version>2.4.1-SNAPSHOT</version>
+	<version>2.4.0</version>
 
 	<name>Pebble Spring Boot (v2) Starter</name>
 	<description>Spring Boot (v2) starter for Pebble Template Engine</description>
@@ -12,7 +13,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<boot.version>2.0.0.RC2</boot.version>
+		<boot.version>2.0.0.RELEASE</boot.version>
 		<pebble-spring.version>2.4.0</pebble-spring.version>
 	</properties>
 
@@ -30,9 +31,9 @@
 			<email>mitchellbosecke@gmail.com</email>
 		</developer>
 		<developer>
-                        <name>Rob Shepherd</name>
-                        <email>rgshepherd@gmail.com</email>
-                </developer>
+            <name>Rob Shepherd</name>
+            <email>rgshepherd@gmail.com</email>
+		</developer>
 	</developers>
 
 	<build>
@@ -41,8 +42,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.3.2</version>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -58,63 +59,8 @@
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.9.1</version>
-				<executions>
-					<execution>
-						<id>attach-javadocs</id>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-release-plugin</artifactId>
-			</plugin>
 		</plugins>
-	<extensions>
-            <extension>
-                <groupId>org.apache.maven.wagon</groupId>
-                <artifactId>wagon-webdav-jackrabbit</artifactId>
-                <version>2.10</version>
-            </extension>
-        </extensions>
     </build>
-
-
-	<profiles>
-		<profile>
-			<id>release-sign-artifacts</id>
-			<activation>
-				<property>
-					<name>performRelease</name>
-					<value>true</value>
-				</property>
-			</activation>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-gpg-plugin</artifactId>
-						<version>1.4</version>
-						<executions>
-							<execution>
-								<id>sign-artifacts</id>
-								<phase>verify</phase>
-								<goals>
-									<goal>sign</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
 
 	<dependencies>
 		<dependency>
@@ -137,25 +83,5 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
-	<scm>
-		<connection>scm:git:git://github.com/PebbleTemplates/pebble-spring-boot-starter.git</connection>
-		<developerConnection>scm:git:git@github.com:PebbleTemplates/pebble-spring-boot-starter.git</developerConnection>
-		<url>http://github.com/PebbleTemplates/pebble-spring-boot-starter.git</url>
-		<tag>HEAD</tag>
-	</scm>
-	
-	<repositories>
-      <repository>
-          <id>spring-milestones</id>
-          <url>http://repo.spring.io/milestone</url>
-      </repository>
-  </repositories>
-<distributionManagement>
-        <repository>
-            <id>952_maven</id>
-            <url>dav:http://repo.952cloud.com/maven/952</url>
-        </repository>
-    </distributionManagement>
 
 </project>
